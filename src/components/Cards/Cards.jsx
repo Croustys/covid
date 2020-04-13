@@ -7,8 +7,7 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
         return 'Loading...';
     }
     const today = (
-    `${new Date(lastUpdate).getFullYear()} - ${new Date(lastUpdate).getMonth() < 10 ? `0${new Date(lastUpdate).getMonth()}` : `${new Date(lastUpdate).getMonth()}`} -
-    ${new Date(lastUpdate).getDay() < 10 ? `0${new Date(lastUpdate).getDay()}` : `${new Date(lastUpdate).getDay()}`}`)
+    `${new Date(lastUpdate).getFullYear()} - ${new Date(lastUpdate).getMonth()+1 < 10 ? `0${new Date(lastUpdate).getMonth()+1}` : `${new Date(lastUpdate).getMonth()+1}`} - ${new Date(lastUpdate).getDate() < 10 ? `0${new Date(lastUpdate).getDate()}` : `${new Date(lastUpdate).getDate()}`}`)
     return (
         <div className="wrapper">
             <div className="card">
