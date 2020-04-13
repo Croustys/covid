@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Cards } from './components'
+import { Cards, Chart } from './components'
 import { dataFetch } from './api'
 
 class App extends React.Component {
@@ -17,6 +17,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Cards data={data}/>
+        <Chart data={data}/>
       </div>
     )
   }
