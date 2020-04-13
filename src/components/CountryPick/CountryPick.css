@@ -1,0 +1,16 @@
+.dropDown {
+    justify-content: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+    height: 5vh;
+    padding-left: 0.8vw;
+    font-weight: 700;
+    font-size: 1.7rem;
+    border: none;
+    border-bottom: 3px solid black;
+    margin-top: 5vh;
+}
+.dropDown:hover {
+    border-bottom: 3px solid rgba(0, 0, 255, 0.5);
+}

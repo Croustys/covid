@@ -1,7 +1,7 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
 
-const Chart = ({data: {confirmed, recovered, deaths}}) => {
+const Chart = ({data: {confirmed, recovered, deaths}, country}) => {
   if(!confirmed){
     return ''
   }
@@ -20,7 +20,7 @@ const Chart = ({data: {confirmed, recovered, deaths}}) => {
         }}
         options={{
           legend: { display: false },
-          title: { display: true, text: `Current state in Hungary` },
+          title: { display: true, text: `Current state in ${country}` },
         }}
       />
     ) : null
