@@ -1,33 +1,33 @@
 import React from 'react'
-import {Line} from 'react-chartjs-2'
-import { useState, useEffect } from 'react'
-//import {dataFetch} from '../../api'
+import { Bar } from 'react-chartjs-2'
 
 const Chart = ({data: {confirmed, recovered, deaths}}) => {
-  const [chartData, setChartData] = useState({})
-  const chart = () => {
-    setChartData({
-      labels: [confirmed, recovered, deaths],
-      datasets: [
-        {
-          label: `hehe`,
-          data: [1, 2, 3, 4, 5, 6],
-          backgroundColor: [
-            'rgb(215, 32, 3)'
-          ],
-          borderWidth: 1
-        }
-      ]
-    }) 
+  if(!confirmed){
+    return ''
   }
-  useEffect(() => {
-    chart()
-  }, [])
-
+  const barChart = (
+    confirmed ? (
+      <Bar
+        data={{
+          labels: ['Infected', 'Recovered', 'Deaths'],
+          datasets: [
+            {
+              label: 'People',
+              backgroundColor: ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)'],
+              data: [confirmed.value, recovered.value, deaths.value],
+            },
+          ],
+        }}
+        options={{
+          legend: { display: false },
+          title: { display: true, text: `Current state in Hungary` },
+        }}
+      />
+    ) : null
+  );
   return (
       <div>
-        <h1>Chartbtw</h1>
-        <Line data={chartData} />
+        {barChart}
       </div>
   )
 }
