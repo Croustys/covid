@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Cards } from './components'
+import { Cards, Chart } from './components'
 import { dataFetch } from './api'
 
 class App extends React.Component {
