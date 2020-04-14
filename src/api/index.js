@@ -27,14 +27,23 @@ export const fetchCountries = async () =>{
         console.log(e)
     }
 }
+class State {
+    constructor(region, conf, recovered, deaths) {
+        this.region = region;
+        this.confirmed = conf;
+        this.recovered = recovered;
+        this.deaths = deaths;
+    }
+}
 export const fetchOneWeek = async () => {
     try {
-        //const total_data = []
-        const total_data = await axios.get(`${url}daily/${datum}`)
-        //const {data : {confirmed, recovered, deaths, lastUpdate}} = await axios.get(`${url}daily/${datum}`)
-        const a = total_data.data.map(countryRegion => countryRegion.confirmed)
-        console.log(a)
+
+        const dailyData = await axios.get(`${url}daily/${datum}`)
+        const Data = []
+        dailyData.data.map(x => Data.push(new State(x.combinedKey, x.confirmed, x.recovered, x.deaths)))
+        return Data
     }
     catch(e)
     {console.log(e)}
 }
+fetchOneWeek()
