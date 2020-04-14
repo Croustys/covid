@@ -1,5 +1,5 @@
 import axios from 'axios'
-//const datum = `${new Date().getMonth() + 1}-${new Date().getDate()-1}-${new Date().getFullYear()}`
+const datum = `${new Date().getMonth() + 1}-${new Date().getDate()-1}-${new Date().getFullYear()}`
 const url = 'https://covid19.mathdro.id/api/'
 
 export const dataFetch = async (country) => {
@@ -26,4 +26,15 @@ export const fetchCountries = async () =>{
     catch(e) {
         console.log(e)
     }
+}
+export const fetchOneWeek = async () => {
+    try {
+        //const total_data = []
+        const total_data = await axios.get(`${url}daily/${datum}`)
+        //const {data : {confirmed, recovered, deaths, lastUpdate}} = await axios.get(`${url}daily/${datum}`)
+        const a = total_data.data.map(countryRegion => countryRegion.confirmed)
+        console.log(a)
+    }
+    catch(e)
+    {console.log(e)}
 }
