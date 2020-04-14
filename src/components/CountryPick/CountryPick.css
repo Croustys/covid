@@ -1,8 +1,8 @@
 .dropDown {
     justify-content: center;
-    margin-left: 40%;
-    margin-right: 40%;
-    width: 20%;
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
     height: 5vh;
     padding-left: 0.8vw;
     font-weight: 700;
@@ -14,3 +14,20 @@
 .dropDown:hover {
     border-bottom: 3px solid rgba(0, 0, 255, 0.5);
 }
+@media all and (max-width: 720px) {
+    .dropDown{
+        font-size: 1.2rem;
+        width: 40%;
+        margin: 5vh 30% 0 30%;
+        border-bottom: 2px solid black;
+    }
+}
+@media all and (max-width: 500px) {
+    .dropDown{
+        font-size: 0.9rem;
+        width: 50%;
+        margin: 5vh 25% 0 25%;
+        font-weight: 600;
+        border-bottom: 1.5px solid black;
+    }
+} 
