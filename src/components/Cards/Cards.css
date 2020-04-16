@@ -8,8 +8,15 @@
     align-items: center;
     text-align: center;
 }
-.card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.card1:hover {
+    /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+    box-shadow: 0 14px 28px #DD1155, 0 10px 10px rgba(0,0,0,0.22);
+}
+.card2:hover{
+    box-shadow: 0 14px 28px rgba(0, 255, 0, 0.65), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.card3:hover{
+    box-shadow: 0 14px 28px #0C0C0C, 0 10px 10px rgba(0,0,0,0.22);
 }
 .wrapper {
     width: 100%;

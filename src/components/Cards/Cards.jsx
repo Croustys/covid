@@ -11,14 +11,14 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
     
     return (
         <div className="wrapper">
-            <div className="card">
+            <div className="card card1">
                 <h2>Infected:</h2>
                 <h1><CountUp start={0} end={confirmed.value} duration={1} separator={","} />
                     </h1>
                 <h2>Last Update:</h2>
                 <h2>{today}</h2>
             </div>
-            <div className="card">
+            <div className="card card2">
                 <h2>Recovered:</h2>
                 <h1>
                 <CountUp start={0} end={recovered.value} duration={1} separator={","} />
@@ -26,7 +26,7 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
                 <h2>Last Update:</h2>
                 <h2>{today}</h2>
             </div>
-            <div className="card">
+            <div className="card card3">
                 <h2>Deaths:</h2>
                 <h1>
                 <CountUp start={0} end={deaths.value} duration={1} separator={","}/>
