@@ -36,4 +36,3 @@ export const fetchOneWeek = async () => {
     catch(e)
     {console.log(e)}
 }
-fetchOneWeek()
